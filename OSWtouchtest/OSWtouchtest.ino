@@ -10,5 +10,6 @@ void loop()
   val = analogRead(A0);
   Serial.println(val);
   //gittest_from_surface
+  //gittest_from_surface_パート2!!
 }
 
