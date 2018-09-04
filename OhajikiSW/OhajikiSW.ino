@@ -14,5 +14,10 @@ void setup()
 
 void loop()
 {
-
+  //PHOTO_SW入力待ち
+  while(1)
+  {
+    if(digitalRead(PHOTO_SW))
+      break;
+  }
 }
