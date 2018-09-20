@@ -14,6 +14,8 @@ void setup()
   pinMode(VIB_SW,INPUT);
   pinMode(LED_SIG,OUTPUT);
   pinMode(LED,OUTPUT);
+  digitalWrite(LED_SIG,LOW);
+  digitalWrite(LED,LOW);
 }
 
 void loop()
@@ -52,5 +54,18 @@ void loop()
     if(millis()-chattertime > chatterLimit)
       chattercount = 0;
   }
+
+  //DEBUG
+  if (mode == true)
+  {
+  	digitalWrite(LED,HIGH);
+  	delay(1000);
+  }
+  else
+  {
+  	digitalWrite(LED,LOW);
+  	delay(1000);
+  }
+  //DEBUG
 
 }
