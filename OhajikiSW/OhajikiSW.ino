@@ -28,6 +28,7 @@ void loop()
       break;
   }
 
+  digitalWrite(LED,HIGH); //debug
   //衝撃検知
   boolean vibstate = false;
   int chattercount = 0;
@@ -47,6 +48,7 @@ void loop()
     //チャタリング回数が一定以上になればモード変更して脱出
     if(chattercount >= chatterTimes)
     {
+      digitalWrite(LED,LOW);
       mode = true;
       break;
     }
@@ -58,12 +60,12 @@ void loop()
   //DEBUG
   if (mode == true)
   {
-  	digitalWrite(LED,HIGH);
+  	digitalWrite(LED_SIG,HIGH);
   	delay(1000);
   }
   else
   {
-  	digitalWrite(LED,LOW);
+  	digitalWrite(LED_SIG,LOW);
   	delay(1000);
   }
   //DEBUG
