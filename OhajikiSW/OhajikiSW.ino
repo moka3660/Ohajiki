@@ -14,6 +14,8 @@ void setup()
   pinMode(VIB_SW,INPUT);
   pinMode(LED_SIG,OUTPUT);
   pinMode(LED,OUTPUT);
+  digitalWrite(LED_SIG,LOW);
+  digitalWrite(LED,LOW);
 }
 
 void loop()
@@ -51,6 +53,15 @@ void loop()
     //チャタリング回数に達しなければカウンタ初期化
     if(millis()-chattertime > chatterLimit)
       chattercount = 0;
+  }
+
+  if (mode == true)
+  {
+  	//変色
+  }
+  else
+  {
+  	//戻る
   }
 
 }
