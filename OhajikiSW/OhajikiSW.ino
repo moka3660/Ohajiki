@@ -18,7 +18,7 @@ void setup()
   pinMode(LED2,OUTPUT);
   digitalWrite(LED_SIG,LOW);
   digitalWrite(LED1,LOW);
-  digitalWrite(LED2>LOW);
+  digitalWrite(LED2,LOW);
 }
 
 void loop()
