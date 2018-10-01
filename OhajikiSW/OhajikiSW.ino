@@ -65,6 +65,7 @@ void loop()
   }
   else
   {
+  	digitalWrite(LED,LOW);//衝撃検知終了
   	digitalWrite(LED_SIG,LOW);
   	delay(1000);
   }
