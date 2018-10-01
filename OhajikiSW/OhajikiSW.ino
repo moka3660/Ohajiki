@@ -1,7 +1,8 @@
 const int PHOTO_SW = 4;
 const int VIB_SW = 3;
 const int LED_SIG = 0;
-const int LED = 1;//for debug
+const int LED1 = 1;//for debug 1
+const int LED2 = 2;//for debug 2
 boolean mode = false;
 #define vibLimit 15000  //衝撃検知待ち時間
 #define chatterLimit 700 //衝撃検知一回の時間
@@ -13,9 +14,11 @@ void setup()
   pinMode(PHOTO_SW,INPUT);
   pinMode(VIB_SW,INPUT);
   pinMode(LED_SIG,OUTPUT);
-  pinMode(LED,OUTPUT);
+  pinMode(LED1,OUTPUT);
+  pinMode(LED2,OUTPUT);
   digitalWrite(LED_SIG,LOW);
-  digitalWrite(LED,LOW);
+  digitalWrite(LED1,LOW);
+  digitalWrite(LED2>LOW);
 }
 
 void loop()
@@ -28,7 +31,7 @@ void loop()
       break;
   }
 
-  digitalWrite(LED,HIGH); //debug
+  digitalWrite(LED1,HIGH); //debug
   //衝撃検知
   boolean vibstate = false;
   int chattercount = 0;
@@ -48,7 +51,7 @@ void loop()
     //チャタリング回数が一定以上になればモード変更して脱出
     if(chattercount >= chatterTimes)
     {
-      digitalWrite(LED,LOW);
+      digitalWrite(LED1,LOW);
       mode = true;
       break;
     }
@@ -60,13 +63,14 @@ void loop()
   //DEBUG
   if (mode == true)
   {
-  	digitalWrite(LED_SIG,HIGH);
+  	digitalWrite(LED2,HIGH);
   	delay(1000);
+  	digitalWrite(LED2,LOW);
   }
   else
   {
-  	digitalWrite(LED,LOW);//衝撃検知終了
-  	digitalWrite(LED_SIG,LOW);
+  	digitalWrite(LED1,LOW);//衝撃検知終了
+  	digitalWrite(LED2,LOW);
   	delay(1000);
   }
   //DEBUG
