@@ -27,7 +27,8 @@ void loop()
 
 void lighting(int Length, int Red, int Green, int Blue)
 {
-	unsigned long colortimes = millies();
+	unsigned long colortimes;
+  colortimes = millis();
  	while(millis()-colortimes < Length)
   	{
     	digitalWrite(LED_R, HIGH);
