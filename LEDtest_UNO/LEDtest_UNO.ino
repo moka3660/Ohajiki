@@ -1,7 +1,7 @@
 const int LED_SIG = 0;
 const int LED_R = 1;
 const int LED_G = 2;
-const int LED_B = 5;
+const int LED_B = 3;
 
 #define colorlength 1000
 //unsigned long colortimes;
@@ -36,12 +36,15 @@ void lighting(int Length, int Red, int Green, int Blue)
   	{
     	digitalWrite(LED_R, HIGH);
 	    analogWrite(LED_SIG, Red);
+      delayMicroseconds(100);
 	    digitalWrite(LED_R, LOW);
 	    digitalWrite(LED_G, HIGH);
 	    analogWrite(LED_SIG, Green);
+      delayMicroseconds(100);
 	    digitalWrite(LED_G, LOW);
 	    digitalWrite(LED_B, HIGH);
 	    analogWrite(LED_SIG, Blue);
+      delayMicroseconds(100);
 	    digitalWrite(LED_B, LOW);
 	    digitalWrite(LED_R, HIGH);
 	}
