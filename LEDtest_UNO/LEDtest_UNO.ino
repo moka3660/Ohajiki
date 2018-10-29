@@ -25,6 +25,23 @@ void loop()
   lighting(500, 255, 0, 0);
   lighting(500, 0, 255, 0);
   lighting(500, 0, 0, 255);
+  lighting(300, 0, 0, 0);
+  lighting(300, 255, 255, 255);
+  lighting(300, 128, 128, 0);
+  lighting(300, 255, 255, 0);
+  lighting(300, 255, 0, 255);
+  lighting(300, 192, 192, 192);
+  lighting(300, 0, 255, 255);
+  lighting(300, 0, 255, 0);
+  lighting(300, 255, 0, 0);
+  lighting(300, 128, 128, 128);
+  lighting(300, 0, 0, 255);
+  lighting(300, 0, 128, 0);
+  lighting(300, 128, 0, 128);
+  lighting(300, 0, 0, 128);
+  lighting(300, 0, 128, 128);
+  lighting(300, 128, 0, 0);
+  lighting(700, 0, 0, 0);
 }
 
 
