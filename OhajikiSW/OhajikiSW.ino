@@ -81,3 +81,25 @@ void loop()
   //DEBUG
 
 }
+
+void lighting(int Length, int Red, int Green, int Blue)
+{
+  unsigned long colortimes;
+  colortimes = millis();
+  while(millis()-colortimes < Length)
+    {
+      digitalWrite(LED_R, HIGH);
+      analogWrite(LED_SIG, Red);
+      delayMicroseconds(100);
+      digitalWrite(LED_R, LOW);
+      digitalWrite(LED_G, HIGH);
+      analogWrite(LED_SIG, Green);
+      delayMicroseconds(100);
+      digitalWrite(LED_G, LOW);
+      digitalWrite(LED_B, HIGH);
+      analogWrite(LED_SIG, Blue);
+      delayMicroseconds(100);
+      digitalWrite(LED_B, LOW);
+      digitalWrite(LED_R, HIGH);
+  }
+}
