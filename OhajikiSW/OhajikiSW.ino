@@ -1,8 +1,11 @@
 const int PHOTO_SW = 4;
 const int VIB_SW = 3;
 const int LED_SIG = 0;
-const int LED1 = 1;//for debug 1
-const int LED2 = 2;//for debug 2
+const int LED_R = 1;
+const int LED_G = 2;
+const int LED_B = 5; 
+//const int LED1 = 1;//for debug 1
+//const int LED2 = 2;//for debug 2
 boolean mode = false;
 #define vibLimit 15000  //衝撃検知待ち時間
 #define chatterLimit 700 //衝撃検知一回の時間
@@ -13,12 +16,12 @@ void setup()
   //入出力設定
   pinMode(PHOTO_SW,INPUT);
   pinMode(VIB_SW,INPUT);
-  pinMode(LED_SIG,OUTPUT);
-  pinMode(LED1,OUTPUT);
-  pinMode(LED2,OUTPUT);
-  digitalWrite(LED_SIG,LOW);
-  digitalWrite(LED1,LOW);
-  digitalWrite(LED2,LOW);
+  pinMode(LED_R,OUTPUT);
+  pinMode(LED_G,OUTPUT);
+  pinMode(LED_B,OUTPUT);
+  digitalWrite(LED_R,LOW);
+  digitalWrite(LED_G,LOW);
+  digitalWrite(LED_B,LOW);
 }
 
 void loop()
