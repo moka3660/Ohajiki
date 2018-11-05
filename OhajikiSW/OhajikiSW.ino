@@ -1,12 +1,14 @@
 const int PHOTO_SW = 4;
-const int VIB_SW = 3;
+const int VIB_SW = 4;
 const int LED_SIG = 0;
 const int LED1 = 1;//for debug 1
 const int LED2 = 2;//for debug 2
+boolean next = false;
 boolean mode = false;
+unsigned long phototime;
 #define vibLength 15000  //衝撃検知待ち時間
 #define chatterLength 700 //衝撃検知一回の時間
-#define chatterTimes 10 //チャタリング回数
+#define chatterTimes 15 //チャタリング回数
 
 void setup()
 {
@@ -28,6 +30,16 @@ void loop()
   while(1)
   {
     if(digitalRead(PHOTO_SW))
+      phototime = millis();
+    while(digitalRead(PHOTO_SW))
+    {
+      if(millis() - phototime > 200)
+      {
+        next = true;
+        break;
+      }
+    }
+    if(next == true)
       break;
   }
 
