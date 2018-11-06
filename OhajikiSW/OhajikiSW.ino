@@ -10,6 +10,9 @@ boolean mode = false;
 #define vibLimit 15000  //衝撃検知待ち時間
 #define chatterLimit 700 //衝撃検知一回の時間
 #define chatterTimes 10 //チャタリング回数
+int randRed = 0;
+int randGreen = 0;
+int randBlue = 0;
 
 void setup()
 {
@@ -67,7 +70,10 @@ void loop()
   if (mode == true)
   {
     //変色
-    lighting(10000, 0, 192, 192);
+    randRed = random(256);
+    randGreen = random(256);
+    randBlue = random(256);
+    lighting(10000, randRed, randGreen, randBlue);
   }
   else
   {
