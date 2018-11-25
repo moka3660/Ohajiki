@@ -34,16 +34,6 @@ void loop()
   while(1)
   {
     if(digitalRead(PHOTO_SW))
-      phototime = millis();
-    while(digitalRead(PHOTO_SW))
-    {
-      if(millis() - phototime > 200)
-      {
-        next = true;
-        break;
-      }
-    }
-    if(next == true)
       break;
   }
 
@@ -54,7 +44,7 @@ void loop()
   unsigned long vibtime;
   unsigned long chattertime;
   vibtime = millis(); //開始時間取得
-  while(millis() - vibtime < vibLength)
+  while(millis() - vibtime < vibLimit)
   {
     //チャタリングカウンタ
     if(vibstate != digitalRead(VIB_SW))
@@ -72,7 +62,7 @@ void loop()
       break;
     }
     //チャタリング回数に達しなければカウンタ初期化
-    if(millis() - chattertime > chatterLength)
+    if(millis() - chattertime > chatterLimit)
       chattercount = 0;
   }
 
