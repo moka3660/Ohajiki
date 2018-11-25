@@ -1,5 +1,5 @@
 const int PHOTO_SW = 4;
-const int VIB_SW = 4;
+const int VIB_SW = 3;
 const int LED_SIG = 0;
 const int LED_R = 1;
 const int LED_G = 2;
