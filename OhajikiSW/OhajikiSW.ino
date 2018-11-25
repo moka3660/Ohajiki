@@ -70,9 +70,15 @@ void loop()
   if (mode == true)
   {
     //変色
-    randRed = random(256);
-    randGreen = random(256);
-    randBlue = random(256);
+    while(1)
+    {
+      randRed = random(256);
+      randGreen = random(256);
+      randBlue = random(256);
+
+      if(randRed+randGreen+randBlue >= 255)
+        break;
+    }
     lighting(10000, randRed, randGreen, randBlue);
   }
   else
