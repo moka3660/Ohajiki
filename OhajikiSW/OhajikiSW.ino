@@ -37,7 +37,7 @@ void loop()
       break;
   }
 
-  lighting(300, 255, 255, 255); //debug
+  lighting(100, 255, 0, 0); //指さしたら点灯
   //衝撃検知
   boolean vibstate = false;
   int chattercount = 0;
@@ -70,10 +70,13 @@ void loop()
   if (mode == true)
   {
     //変色
+  /*
     randRed = random(256);
     randGreen = random(256);
     randBlue = random(256);
     lighting(10000, randRed, randGreen, randBlue);
+  */
+    lighting(10000, 0, 0, 255);
   }
   else
   {
