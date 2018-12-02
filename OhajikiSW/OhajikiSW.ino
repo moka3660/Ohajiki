@@ -76,7 +76,7 @@ void loop()
     randBlue = random(256);
     lighting(10000, randRed, randGreen, randBlue);
   */
-    lighting(10000, 0, 0, 255);
+    lighting(500, 0, 0, 255);
   }
   else
   {
@@ -85,6 +85,7 @@ void loop()
   //	digitalWrite(LED2,LOW);
   	delay(1000);
   }
+  lighting(100, 0, 0, 0);
   //DEBUG
 
 }
